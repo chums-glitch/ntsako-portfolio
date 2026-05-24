@@ -1,128 +1,83 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Ntsako Chuma</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px;
-      border: 1px solid #ddd;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      padding: 10px 0;
-      border-bottom: 3px solid #333;
-      display: inline-block;
-    }
-    nav {
-      margin: 20px 0 30px 0;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #ccc;
-    }
-    nav a {
-      color: #333;
-      text-decoration: none;
-      margin-right: 25px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #0066cc;
-    }
-    h1 {
-      font-size: 32px;
-      color: #222;
-    }
-    h2 {
-      font-size: 26px;
-      border-left: 5px solid #333;
-      padding-left: 15px;
-    }
-    .image-box {
-      width: 200px;
-      height: 200px;
-      border: 3px solid #333;
-      margin: 20px 0;
-    }
-    .image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .video-box {
-      margin: 20px 0;
-    }
-    video {
-      max-width: 100%;
-      background: #000;
-    }
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 2px solid #333;
-      text-align: center;
-    }
-    .social-links a {
-      margin: 0 10px;
-      color: #0066cc;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-  <div class="logo">🇿🇦 Ntsako Chuma</div>
+<div class="page">
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About me</a>
-    <a href="contact.html">Contact us</a>
-  </nav>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">logo</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
 
-  <h1>Welcome to my portfolio</h1>
+  <!--  video or image -->
+  <div class="hero-box">
+    <img src="my_picture.jpeg" alt="Ntsako Chuma" onerror="this.src='https://via.placeholder.com/200x200?text=Ntsako'">
+    
+    <span class="hero-placeholder">Your video or image</span>
+  </div>
 
-  <div style="display: flex; gap: 30px; flex-wrap: wrap;">
-    <div style="flex: 2;">
+  <!-- BIO SECTION -->
+  <div class="bio-section">
+    <div class="bio-text">
       <h2>Ntsako Chuma</h2>
-      <p><strong>Hi, I'm Ntsako!</strong> I'm a final-year Computer Science student from Polokwane, South Africa. I'm currently learning web development at the CodeTribe Bootcamp.</p>
-      <p>I'm passionate about creating websites and solving problems with code. My goal is to become a professional web developer and build projects that help people.</p>
-      <p>When I'm not coding, I enjoy reading, playing chess, and exploring tech communities.</p>
+      <p>
+        <strong>Your bio –</strong> I'm a final-year Computer Science student from Polokwane,
+        South Africa, currently sharpening my skills at the CodeTribe Bootcamp. I'm passionate
+        about web development and building things that make a difference.
+      </p>
+      <p>
+        I enjoy solving real-world problems with code, learning new technologies, and collaborating
+        with other developers. When I'm not coding, you'll find me reading, playing chess, or
+        attending local tech meetups.
+      </p>
     </div>
-    <div style="flex: 1;">
-      <div class="image-box">
-        <img src="my_picture.jpeg" alt="Ntsako Chuma" onerror="this.src='https://via.placeholder.com/200x200?text=Ntsako'">
+
+    
+    <div class="profile-circle">
+      <img src="my_picture.jpeg" alt="Ntsako Chuma">
+      <span>your Image</span>
+    </div>
+  </div>
+
+  
+  <footer>
+    <div class="footer-left">
+      <p>Address Here<br>Polokwane, South Africa<br>+27 65 984 6006</p>
+      <div class="social-circles">
+        <a href="https://twitter.com/" target="_blank" title="Twitter">T</a>
+        <a href="https://facebook.com/" target="_blank" title="Facebook">F</a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram">I</a>
       </div>
     </div>
-  </div>
 
-  <div class="video-box">
-    <h3>🎥 My Photo</h3>
-    <img src="my_picture.jpeg" alt="Ntsako Chuma" onerror="this.src='https://via.placeholder.com/200x200?text=Ntsako'">
-      
-    <p><small></small></p>
-  </div>
-
-  <footer>
-    <div class="social-links">
-      <a href="#">GitHub</a> | <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+    <div class="footer-center">
+      <p><strong>additional quick links</strong></p>
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="contact.html">Contact Us</a>
     </div>
-    <p>📞 Phone: +27 65 984 6006 | ✉️ Email: ntsakochums@gmail.com</p>
-    <p>&copy; 2026 Ntsako Chuma</p>
-  </footer>
-</div>
 
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57504.39317873787!2d29.4326!3d-23.9045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec677b80f6c2e5f%3A0x3f7cb2a862a93e9d!2sPolokwane%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1234567890"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>
