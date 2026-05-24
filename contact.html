@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Ntsako Chuma</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <h1>🇿🇦 Ntsako Chuma</h1>
+<div class="page">
 
-  <hr>
+  <header>
+    <div class="logo">logo</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
 
-  <a href="index.html">Home</a> |
-  <a href="about.html">About Me</a> |
-  <a href="contact.html">Contact Us</a>
+  <div class="content-box">
+    <h1>Contact Us</h1>
+    <p>Have a question, project idea, or just want to say hi? I'd love to hear from you!</p>
 
-  <hr>
+    <div class="contact-info">
+      <strong>Phone / WhatsApp:</strong> +27 65 984 6006<br>
+      <strong>Email:</strong> ntsakochums@gmail.com<br>
+      <strong>Location:</strong> Polokwane, South Africa<br>
+      <strong>Best time to reach me:</strong> Weekdays 9am – 5pm (SAST)
+    </div>
 
-  <h1>Contact Us</h1>
+    <h3>Send me a message</h3>
 
-  <p>
-    Have a question, project idea, or just want to say hi?
-    I'd love to hear from you!
-  </p>
+    <label>Your Name:</label>
+    <input type="text" placeholder="Enter your name">
 
-  <h3>Contact Information</h3>
+    <label>Your Email:</label>
+    <input type="email" placeholder="Enter your email">
 
-  <p><strong>📞 Phone / WhatsApp:</strong> +27 65 984 6006</p>
-  <p><strong>✉️ Email:</strong> ntsakochums@gmail.com</p>
-  <p><strong>📍 Location:</strong> Polokwane, South Africa</p>
-  <p><strong>⏰ Best time to reach me:</strong> Weekdays 9am - 5pm (SAST)</p>
-
-  <h3>Send me a message</h3>
-
-  <form>
-
-    <label>Your Name:</label><br>
-    <input type="text" placeholder="Enter your name"><br><br>
-
-    <label>Your Email:</label><br>
-    <input type="email" placeholder="Enter your email"><br><br>
-
-    <label>Message:</label><br>
-    <textarea rows="5" cols="40" placeholder="Write your message here..."></textarea><br><br>
+    <label>Message:</label>
+    <textarea rows="5" placeholder="Write your message here..."></textarea>
 
     <button type="submit">Send Message</button>
 
-  </form>
+    <p><small>*This is a demo contact form. For real inquiries, please use email or phone.</small></p>
+  </div>
 
-  <p>
-    <small>
-      *This is a demo contact form.
-      For real inquiries, please use email or phone.
-    </small>
-  </p>
+  <footer>
+    <div class="footer-left">
+      <p>Address Here<br>Polokwane, South Africa<br>+27 65 984 6006</p>
+      <div class="social-circles">
+        <a href="https://twitter.com/" target="_blank" title="Twitter">T</a>
+        <a href="https://facebook.com/" target="_blank" title="Facebook">F</a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram">I</a>
+      </div>
+    </div>
 
-  <hr>
+    <div class="footer-center">
+      <p><strong>additional quick links</strong></p>
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
 
-  <p>
-    <a href="#">GitHub</a> |
-    <a href="#">LinkedIn</a> |
-    <a href="#">Twitter</a> |
-    <a href="#">Instagram</a>
-  </p>
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57504.39317873787!2d29.4326!3d-23.9045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec677b80f6c2e5f%3A0x3f7cb2a862a93e9d!2sPolokwane%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1234567890"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </footer>
 
-  <p>📞 Phone: +27 65 984 6006</p>
-  <p>✉️ Email: ntsakochums@gmail.com</p>
-
-  <p>&copy; 2026 Ntsako Chuma</p>
-
+</div>
 </body>
 </html>
