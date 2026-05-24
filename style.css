@@ -1,0 +1,536 @@
+/* ============================================
+   style.css - Ntsako Chuma Portfolio
+   External CSS for all three pages
+   ============================================ */
+
+/* ── RESET & BASE ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ── PAGE WRAPPER ── */
+.page {
+  max-width: 960px;
+  margin: 30px auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px 28px;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.logo {
+  border: 1px solid #333;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  color: #0066cc;
+  border-bottom: 2px solid #0066cc;
+}
+
+/* ── HAMBURGER BUTTON (hidden on desktop) ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger to X when open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ============================================
+   HERO BOX (video / image)
+   ============================================ */
+.hero-box {
+  width: 100%;
+  height: 340px;
+  border: 1px solid #ccc;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.hero-box video,
+.hero-box img.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+/* ============================================
+   BIO SECTION
+   ============================================ */
+.bio-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0;
+}
+
+.bio-text {
+  flex: 1;
+}
+
+.bio-text h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+.bio-text p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* ── CIRCLE PROFILE IMAGE ── */
+.profile-circle {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-circle span {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+
+/* ============================================
+   CONTENT BOX (About & Contact pages)
+   ============================================ */
+.content-box {
+  border: 1px solid #ccc;
+  padding: 28px;
+  margin-bottom: 24px;
+  background: #fff;
+}
+
+.content-box h1 {
+  font-size: 26px;
+  margin-bottom: 16px;
+  color: #111;
+  border-left: 4px solid #333;
+  padding-left: 12px;
+}
+
+.content-box h3 {
+  font-size: 16px;
+  margin: 18px 0 10px;
+  color: #222;
+}
+
+.content-box p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.content-box label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+  color: #333;
+}
+
+.content-box ul {
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+
+.content-box li {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ── CONTACT INFO BOX ── */
+.contact-info {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 2;
+  color: #444;
+}
+
+/* ── FORM ELEMENTS ── */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  max-width: 440px;
+  padding: 9px 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  display: block;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #0066cc;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background: #333;
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #0066cc;
+}
+
+small {
+  font-size: 11px;
+  color: #999;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding-top: 18px;
+  border-top: 1px solid #ccc;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 160px;
+}
+
+.footer-left p {
+  font-size: 13px;
+  margin-bottom: 14px;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* ── SOCIAL CIRCLE BUTTONS ── */
+.social-circles {
+  display: flex;
+  gap: 12px;
+}
+
+.social-circles a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.social-circles a:hover {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* ── QUICK LINKS ── */
+.footer-center {
+  flex: 1;
+  min-width: 140px;
+  padding-top: 2px;
+}
+
+.footer-center p {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.footer-center a {
+  display: block;
+  color: #444;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 2;
+  transition: color 0.3s;
+}
+
+.footer-center a:hover {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+/* ── EMBED MAP RECTANGLE ── */
+.map-box {
+  width: 260px;
+  height: 140px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================
+   MEDIA QUERIES — RESPONSIVE
+   ============================================ */
+
+/* ── TABLET (max 768px) ── */
+@media (max-width: 768px) {
+
+  .page {
+    margin: 10px;
+    padding: 16px;
+  }
+
+  /* Show hamburger, hide normal nav */
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 52px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 200px;
+    z-index: 100;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Hero shorter on tablet */
+  .hero-box {
+    height: 220px;
+  }
+
+  /* Bio stacks vertically */
+  .bio-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .profile-circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Footer stacks */
+  footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .map-box {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Forms full width */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    max-width: 100%;
+  }
+}
+
+/* ── MOBILE (max 480px) ── */
+@media (max-width: 480px) {
+
+  .page {
+    margin: 6px;
+    padding: 12px;
+  }
+
+  .logo {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .hero-box {
+    height: 180px;
+  }
+
+  .bio-text h2 {
+    font-size: 22px;
+  }
+
+  .bio-text p {
+    font-size: 12px;
+  }
+
+  .profile-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .content-box {
+    padding: 16px;
+  }
+
+  .content-box h1 {
+    font-size: 20px;
+  }
+
+  .social-circles a {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .map-box {
+    width: 100%;
+    height: 160px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* ── DESKTOP (min 960px) ── */
+@media (min-width: 960px) {
+  .hero-box {
+    height: 360px;
+  }
+
+  .bio-text h2 {
+    font-size: 30px;
+  }
+}
