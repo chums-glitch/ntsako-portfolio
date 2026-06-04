@@ -4,6 +4,17 @@
    ============================================ */
 
 /* ── RESET & BASE ── */
+:root {
+  --primary: #c21870;
+  --primary-dark: #4a1735;
+  --primary-light: #ffe1f0;
+  --accent: #2f8f9d;
+  --paper: #ffffff;
+  --text: #222222;
+  --muted: #555555;
+  --line: #e6bfd2;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,8 +27,10 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  color: #222;
+  background:
+    linear-gradient(135deg, rgba(255, 225, 240, 0.9), rgba(224, 247, 250, 0.85)),
+    #f8f4f7;
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -25,8 +38,10 @@ body {
 .page {
   max-width: 960px;
   margin: 30px auto;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(74, 23, 53, 0.12);
   padding: 20px 28px;
 }
 
@@ -38,7 +53,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 14px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--line);
   margin-bottom: 20px;
   position: relative;
 }
@@ -63,7 +78,7 @@ nav {
 }
 
 nav a {
-  color: #222;
+  color: var(--primary-dark);
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
@@ -73,8 +88,8 @@ nav a {
 }
 
 nav a:hover {
-  color: #0066cc;
-  border-bottom: 2px solid #0066cc;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
 /* ── HAMBURGER BUTTON (hidden on desktop) ── */
@@ -92,7 +107,7 @@ nav a:hover {
   display: block;
   width: 26px;
   height: 3px;
-  background: #333;
+  background: var(--primary-dark);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -114,8 +129,9 @@ nav a:hover {
 .hero-box {
   width: 100%;
   height: 340px;
-  border: 1px solid #ccc;
-  background: #eee;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--primary-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +156,7 @@ nav a:hover {
   align-items: flex-start;
   gap: 40px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--line);
   margin-bottom: 0;
 }
 
@@ -152,14 +168,14 @@ nav a:hover {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 14px;
-  color: #111;
+  color: var(--primary-dark);
 }
 
 .bio-text p {
   font-size: 13px;
   line-height: 1.7;
   margin-bottom: 12px;
-  color: #444;
+  color: var(--muted);
 }
 
 /* ── CIRCLE PROFILE IMAGE ── */
@@ -167,13 +183,14 @@ nav a:hover {
   width: 190px;
   height: 190px;
   border-radius: 50%;
-  border: 2px solid #ccc;
+  border: 4px solid var(--primary-light);
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f0f0;
+  background: var(--primary-light);
+  box-shadow: 0 8px 18px rgba(194, 24, 112, 0.18);
 }
 
 .profile-circle img {
@@ -184,7 +201,7 @@ nav a:hover {
 
 .profile-circle span {
   font-size: 12px;
-  color: #999;
+  color: var(--muted);
   text-align: center;
 }
 
@@ -192,31 +209,31 @@ nav a:hover {
    CONTENT BOX (About & Contact pages)
    ============================================ */
 .content-box {
-  border: 1px solid #ccc;
+  border: 1px solid var(--line);
   padding: 28px;
   margin-bottom: 24px;
-  background: #fff;
+  background: var(--paper);
 }
 
 .content-box h1 {
   font-size: 26px;
   margin-bottom: 16px;
-  color: #111;
-  border-left: 4px solid #333;
+  color: var(--primary-dark);
+  border-left: 4px solid var(--primary);
   padding-left: 12px;
 }
 
 .content-box h3 {
   font-size: 16px;
   margin: 18px 0 10px;
-  color: #222;
+  color: var(--primary-dark);
 }
 
 .content-box p {
   font-size: 13px;
   line-height: 1.7;
   margin-bottom: 10px;
-  color: #444;
+  color: var(--muted);
 }
 
 .content-box label {
@@ -224,7 +241,7 @@ nav a:hover {
   font-weight: bold;
   margin-bottom: 4px;
   display: block;
-  color: #333;
+  color: var(--primary-dark);
 }
 
 .content-box ul {
@@ -235,18 +252,18 @@ nav a:hover {
 .content-box li {
   font-size: 13px;
   line-height: 1.8;
-  color: #444;
+  color: var(--muted);
 }
 
 /* ── CONTACT INFO BOX ── */
 .contact-info {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: var(--primary-light);
+  border: 1px solid var(--line);
   padding: 16px;
   margin-bottom: 20px;
   font-size: 13px;
   line-height: 2;
-  color: #444;
+  color: var(--muted);
 }
 
 /* ── FORM ELEMENTS ── */
@@ -257,7 +274,7 @@ textarea {
   max-width: 440px;
   padding: 9px 10px;
   margin-bottom: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--line);
   font-size: 13px;
   display: block;
   transition: border-color 0.3s;
@@ -267,7 +284,7 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-  border-color: #0066cc;
+  border-color: var(--primary);
 }
 
 textarea {
@@ -275,7 +292,7 @@ textarea {
 }
 
 button[type="submit"] {
-  background: #333;
+  background: var(--primary);
   color: #fff;
   padding: 10px 24px;
   border: none;
@@ -285,7 +302,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background: #0066cc;
+  background: var(--primary-dark);
 }
 
 small {
@@ -301,7 +318,7 @@ footer {
   gap: 24px;
   align-items: flex-start;
   padding-top: 18px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--line);
   flex-wrap: wrap;
   margin-top: 20px;
 }
@@ -314,7 +331,7 @@ footer {
 .footer-left p {
   font-size: 13px;
   margin-bottom: 14px;
-  color: #444;
+  color: var(--muted);
   line-height: 1.8;
 }
 
@@ -328,21 +345,21 @@ footer {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid #aaa;
+  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #333;
+  color: var(--primary-dark);
   font-size: 13px;
   font-weight: bold;
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .social-circles a:hover {
-  background: #333;
+  background: var(--primary);
   color: #fff;
-  border-color: #333;
+  border-color: var(--primary);
 }
 
 /* ── QUICK LINKS ── */
@@ -356,12 +373,12 @@ footer {
   font-size: 13px;
   font-weight: bold;
   margin-bottom: 8px;
-  color: #333;
+  color: var(--primary-dark);
 }
 
 .footer-center a {
   display: block;
-  color: #444;
+  color: var(--muted);
   text-decoration: none;
   font-size: 13px;
   line-height: 2;
@@ -369,7 +386,7 @@ footer {
 }
 
 .footer-center a:hover {
-  color: #0066cc;
+  color: var(--primary);
   text-decoration: underline;
 }
 
@@ -377,7 +394,7 @@ footer {
 .map-box {
   width: 260px;
   height: 140px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--line);
   border-radius: 6px;
   overflow: hidden;
   flex-shrink: 0;
@@ -413,12 +430,12 @@ footer {
     position: absolute;
     top: 52px;
     right: 0;
-    background: #fff;
-    border: 1px solid #ccc;
+    background: var(--paper);
+    border: 1px solid var(--line);
     width: 200px;
     z-index: 100;
     padding: 10px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 18px rgba(74, 23, 53, 0.14);
   }
 
   nav.open {
@@ -427,7 +444,7 @@ footer {
 
   nav a {
     padding: 10px 20px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--primary-light);
     font-size: 14px;
   }
 
