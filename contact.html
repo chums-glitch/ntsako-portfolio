@@ -11,8 +11,15 @@
 <div class="page">
 
   <header>
-    <div class="logo">logo</div>
-    <nav>
+    <a class="logo" href="index.html" aria-label="Ntsako Chuma home">
+      <img src="assets/logo.svg" alt="Ntsako Chuma logo">
+    </a>
+    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
       <a href="contact.html">Contact Us</a>
@@ -74,5 +81,16 @@
   </footer>
 
 </div>
+<script>
+  const menuButton = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('#main-nav');
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuButton.classList.toggle('open', isOpen);
+    menuButton.setAttribute('aria-expanded', isOpen);
+    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+</script>
 </body>
 </html>

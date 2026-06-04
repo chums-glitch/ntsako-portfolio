@@ -12,19 +12,27 @@
 
   <!-- NAVBAR -->
   <header>
-    <div class="logo">logo</div>
-    <nav>
+    <a class="logo" href="index.html" aria-label="Ntsako Chuma home">
+      <img src="assets/logo.svg" alt="Ntsako Chuma logo">
+    </a>
+    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
       <a href="contact.html">Contact Us</a>
     </nav>
   </header>
 
-  <!--  video or image -->
+  <!-- HERO VIDEO -->
   <div class="hero-box">
-    <img src="my_picture.jpeg" alt="Ntsako Chuma" onerror="this.src='https://via.placeholder.com/200x200?text=Ntsako'">
-    
-    <span class="hero-placeholder">Your video or image</span>
+    <video controls poster="my_picture.jpeg" preload="metadata" aria-label="Introductory portfolio video">
+      <source src="intro-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   <!-- BIO SECTION -->
@@ -32,7 +40,7 @@
     <div class="bio-text">
       <h2>Ntsako Chuma</h2>
       <p>
-        <strong>Your bio –</strong> I'm a final-year Computer Science student from Polokwane,
+        <strong>My bio -</strong> I'm a final-year Computer Science student from Polokwane,
         South Africa, currently sharpening my skills at the CodeTribe Bootcamp. I'm passionate
         about web development and building things that make a difference.
       </p>
@@ -46,7 +54,6 @@
     
     <div class="profile-circle">
       <img src="my_picture.jpeg" alt="Ntsako Chuma">
-      <span>your Image</span>
     </div>
   </div>
 
@@ -79,5 +86,16 @@
   </footer>
 
 </div>
+<script>
+  const menuButton = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('#main-nav');
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuButton.classList.toggle('open', isOpen);
+    menuButton.setAttribute('aria-expanded', isOpen);
+    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+</script>
 </body>
 </html>

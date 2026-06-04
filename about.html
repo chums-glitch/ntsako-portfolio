@@ -11,8 +11,15 @@
 <div class="page">
 
   <header>
-    <div class="logo">logo</div>
-    <nav>
+    <a class="logo" href="index.html" aria-label="Ntsako Chuma home">
+      <img src="assets/logo.svg" alt="Ntsako Chuma logo">
+    </a>
+    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
       <a href="contact.html">Contact Us</a>
@@ -21,42 +28,30 @@
 
   <div class="content-box">
     <h1>About Me</h1>
+    <p>
+      I am Ntsako Chuma, a final-year Computer Science student from Polokwane, South Africa.
+      I am focused on growing as a web developer by building practical, user-friendly projects
+      and improving my frontend and problem-solving skills.
+    </p>
 
-    <p><strong>Who am I?</strong></p>
-    <p>My name is <strong>Ntsako Chuma</strong>, and I'm a 21-year-old Computer Science student based in Polokwane, South Africa. Technology has always fascinated me, especially how websites and apps are built from scratch.</p>
-
-    <p><strong>My background:</strong></p>
-    <p>I started learning to code in my first year of university. Since then, I've learned HTML, CSS, JavaScript, Java, and database management. I joined the CodeTribe Bootcamp to get hands-on experience and work on real projects that prepare me for the tech industry.</p>
-
-    <p><strong>What I'm working on:</strong></p>
-    <p>Currently, I'm focused on improving my front-end skills and learning React. I'm also working on a personal project — a small website for local businesses to showcase their services online.</p>
-
-    <p><strong>My goals:</strong></p>
+    <h3>Skills</h3>
     <ul>
-      <li>Complete my degree and bootcamp successfully</li>
-      <li>Build a strong portfolio of web projects</li>
-      <li>Get an internship or junior developer role</li>
-      <li>Eventually start teaching coding to young people in my community</li>
+      <li>HTML, CSS, and JavaScript</li>
+      <li>Responsive web design</li>
+      <li>Problem solving and debugging</li>
+      <li>Team collaboration and continuous learning</li>
     </ul>
 
-    <p><strong>Fun facts about me:</strong></p>
-    <ul>
-      <li>I love coffee and working from local cafes</li>
-      <li>I'm a big fan of sci-fi movies</li>
-      <li>I enjoy participating in hackathons</li>
-      <li>I speak English, Tsonga, and basic Zulu</li>
-    </ul>
-
-    <p><strong>Education:</strong></p>
-    <ul>
-      <li>Diploma in Computer Science (Final Year) – Tshwane University of Technology</li>
-      <li>CodeTribe Bootcamp – Full-stack Web Development</li>
-    </ul>
+    <h3>Current Focus</h3>
+    <p>
+      I am currently sharpening my development skills at the CodeTribe Bootcamp and building
+      portfolio projects that show clean structure, responsive layouts, and clear user experiences.
+    </p>
   </div>
 
   <footer>
     <div class="footer-left">
-      <p>Address <br>Bendor, Polokwane ,South Africa <br>+27 65 984 6006</p>
+      <p>Address Here<br>Polokwane, South Africa<br>+27 65 984 6006</p>
       <div class="social-circles">
         <a href="https://twitter.com/" target="_blank" title="Twitter">T</a>
         <a href="https://facebook.com/" target="_blank" title="Facebook">F</a>
@@ -82,5 +77,16 @@
   </footer>
 
 </div>
+<script>
+  const menuButton = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('#main-nav');
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuButton.classList.toggle('open', isOpen);
+    menuButton.setAttribute('aria-expanded', isOpen);
+    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+</script>
 </body>
 </html>
