@@ -7,47 +7,45 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="page">
-
   <header>
     <a class="logo" href="index.html" aria-label="Ntsako Chuma home">
       <img src="assets/logo.svg" alt="Ntsako Chuma logo">
     </a>
-    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     <nav id="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <div class="content-box">
-    <h1>About Me</h1>
-    <p>
-      I am Ntsako Chuma, a final-year Computer Science student from Polokwane, South Africa.
-      I am focused on growing as a web developer by building practical, user-friendly projects
-      and improving my frontend and problem-solving skills.
-    </p>
+  <main class="content-page">
+    <section class="content-box">
+      <p class="eyebrow">About</p>
+      <h1>About Me</h1>
+      <p>
+        I am Ntsako Chuma, a final-year Computer Science student from Polokwane,
+        South Africa. I am focused on growing as a web developer by building
+        practical, user-friendly projects and improving my frontend and
+        problem-solving skills.
+      </p>
 
-    <h3>Skills</h3>
-    <ul>
-      <li>HTML, CSS, and JavaScript</li>
-      <li>Responsive web design</li>
-      <li>Problem solving and debugging</li>
-      <li>Team collaboration and continuous learning</li>
-    </ul>
+      <h3>Skills</h3>
+      <ul>
+        <li>HTML, CSS, and JavaScript basics</li>
+        <li>Responsive web design</li>
+        <li>Problem solving and debugging</li>
+        <li>Team collaboration and continuous learning</li>
+      </ul>
 
-    <h3>Current Focus</h3>
-    <p>
-      I am currently sharpening my development skills at the CodeTribe Bootcamp and building
-      portfolio projects that show clean structure, responsive layouts, and clear user experiences.
-    </p>
-  </div>
+      <h3>Current Focus</h3>
+      <p>
+        I am currently sharpening my development skills at the CodeTribe
+        Bootcamp and building portfolio projects that show clean structure,
+        responsive layouts, and clear user experiences.
+      </p>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-left">
@@ -59,10 +57,10 @@
     </div>
 
     <div class="footer-center">
-      <p><strong>additional quick links</strong></p>
+      <p><strong>Quick links</strong></p>
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div class="map-box">
@@ -74,18 +72,6 @@
       </iframe>
     </div>
   </footer>
-
 </div>
-<script>
-  const menuButton = document.querySelector('.hamburger');
-  const mainNav = document.querySelector('#main-nav');
-
-  menuButton.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    menuButton.classList.toggle('open', isOpen);
-    menuButton.setAttribute('aria-expanded', isOpen);
-    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-  });
-</script>
 </body>
 </html>

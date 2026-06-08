@@ -1,18 +1,13 @@
-/* ============================================
-   style.css - Ntsako Chuma Portfolio
-   External CSS for all three pages
-   ============================================ */
-
-/* ── RESET & BASE ── */
+/* Ntsako Chuma Portfolio */
 :root {
-  --primary: #c21870;
-  --primary-dark: #4a1735;
-  --primary-light: #ffe1f0;
+  --ink: #1f2933;
+  --muted: #52616b;
+  --brand: #b83280;
+  --brand-dark: #4a1735;
   --accent: #2f8f9d;
+  --soft: #f7eef4;
   --paper: #ffffff;
-  --text: #222222;
-  --muted: #555555;
-  --line: #e6bfd2;
+  --line: #ead6e2;
 }
 
 * {
@@ -21,52 +16,40 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background:
-    linear-gradient(135deg, rgba(255, 225, 240, 0.9), rgba(224, 247, 250, 0.85)),
-    #f8f4f7;
-  color: var(--text);
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: #f5f7fb;
   line-height: 1.6;
 }
 
-/* ── PAGE WRAPPER ── */
 .page {
-  max-width: 960px;
-  margin: 30px auto;
+  width: min(1080px, calc(100% - 32px));
+  margin: 24px auto;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
-  box-shadow: 0 12px 30px rgba(74, 23, 53, 0.12);
-  padding: 20px 28px;
+  box-shadow: 0 16px 36px rgba(31, 41, 51, 0.1);
+  overflow: hidden;
 }
 
-/* ============================================
-   NAVBAR
-   ============================================ */
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-bottom: 14px;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 28px;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 20px;
-  position: relative;
 }
 
 .logo {
   display: inline-flex;
   width: 150px;
   height: 42px;
-  text-decoration: none;
 }
 
 .logo img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -74,481 +57,342 @@ header {
 
 nav {
   display: flex;
-  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 24px;
 }
 
 nav a {
-  color: var(--primary-dark);
-  text-decoration: none;
+  color: var(--brand-dark);
   font-size: 14px;
-  font-weight: 600;
-  padding: 4px 0;
+  font-weight: 700;
+  text-decoration: none;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-  color: var(--primary);
-  border-bottom: 2px solid var(--primary);
+  color: var(--brand);
+  border-color: var(--brand);
 }
 
-/* ── HAMBURGER BUTTON (hidden on desktop) ── */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
+main {
+  padding: 28px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 36px;
+  align-items: center;
+  padding: 16px 0 32px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.hero h1,
+.content-box h1 {
+  color: var(--brand-dark);
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.hero p,
+.content-box p,
+.summary-grid p,
+.content-box li {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.button,
+button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid var(--brand);
+  border-radius: 6px;
+  background: var(--brand);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
 }
 
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background: var(--primary-dark);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+.button.secondary {
+  background: #ffffff;
+  color: var(--brand-dark);
 }
 
-/* Animate hamburger to X when open */
-.hamburger.open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+.button:hover,
+button[type="submit"]:hover {
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: #ffffff;
 }
 
-/* ============================================
-   HERO BOX (video / image)
-   ============================================ */
-.hero-box {
+.profile-card {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 6px solid var(--soft);
+  box-shadow: 0 12px 28px rgba(184, 50, 128, 0.18);
+}
+
+.profile-card img {
   width: 100%;
-  height: 340px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-section {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--primary-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  margin-bottom: 24px;
-}
-
-.hero-box video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
   background: #111827;
+  aspect-ratio: 16 / 9;
 }
 
-/* ============================================
-   BIO SECTION
-   ============================================ */
-.bio-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 0;
-}
-
-.bio-text {
-  flex: 1;
-}
-
-.bio-text h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 14px;
-  color: var(--primary-dark);
-}
-
-.bio-text p {
-  font-size: 13px;
-  line-height: 1.7;
-  margin-bottom: 12px;
-  color: var(--muted);
-}
-
-/* ── CIRCLE PROFILE IMAGE ── */
-.profile-circle {
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  border: 4px solid var(--primary-light);
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary-light);
-  box-shadow: 0 8px 18px rgba(194, 24, 112, 0.18);
-}
-
-.profile-circle img {
+.video-section video {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 }
 
-.profile-circle span {
-  font-size: 12px;
-  color: var(--muted);
-  text-align: center;
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
 }
 
-/* ============================================
-   CONTENT BOX (About & Contact pages)
-   ============================================ */
-.content-box {
+.summary-grid article,
+.content-box,
+.contact-info {
   border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.summary-grid article {
+  padding: 22px;
+}
+
+.summary-grid h2,
+.content-box h3 {
+  color: var(--brand-dark);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.content-box {
   padding: 28px;
-  margin-bottom: 24px;
-  background: var(--paper);
 }
 
 .content-box h1 {
-  font-size: 26px;
-  margin-bottom: 16px;
-  color: var(--primary-dark);
-  border-left: 4px solid var(--primary);
-  padding-left: 12px;
+  font-size: clamp(30px, 4vw, 42px);
 }
 
 .content-box h3 {
-  font-size: 16px;
-  margin: 18px 0 10px;
-  color: var(--primary-dark);
-}
-
-.content-box p {
-  font-size: 13px;
-  line-height: 1.7;
-  margin-bottom: 10px;
-  color: var(--muted);
-}
-
-.content-box label {
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 4px;
-  display: block;
-  color: var(--primary-dark);
+  margin-top: 22px;
 }
 
 .content-box ul {
   padding-left: 22px;
-  margin-bottom: 12px;
+  margin-top: 8px;
 }
 
-.content-box li {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-}
-
-/* ── CONTACT INFO BOX ── */
 .contact-info {
-  background: var(--primary-light);
-  border: 1px solid var(--line);
+  background: var(--soft);
   padding: 16px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  line-height: 2;
+  margin: 18px 0 22px;
   color: var(--muted);
 }
 
-/* ── FORM ELEMENTS ── */
-input[type="text"],
-input[type="email"],
+label {
+  display: block;
+  color: var(--brand-dark);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 12px 0 6px;
+}
+
+input,
 textarea {
   width: 100%;
-  max-width: 440px;
-  padding: 9px 10px;
-  margin-bottom: 14px;
+  padding: 11px 12px;
   border: 1px solid var(--line);
-  font-size: 13px;
-  display: block;
-  transition: border-color 0.3s;
-  outline: none;
+  border-radius: 6px;
+  color: var(--ink);
+  font: inherit;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
+input:focus,
 textarea:focus {
-  border-color: var(--primary);
+  border-color: var(--brand);
+  outline: 3px solid rgba(184, 50, 128, 0.12);
 }
 
 textarea {
   resize: vertical;
 }
 
-button[type="submit"] {
-  background: var(--primary);
-  color: #fff;
-  padding: 10px 24px;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  transition: background 0.3s;
-}
-
-button[type="submit"]:hover {
-  background: var(--primary-dark);
+form + p {
+  margin-top: 12px;
 }
 
 small {
-  font-size: 11px;
-  color: #999;
+  color: #7b8794;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
 footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 280px;
   gap: 24px;
-  align-items: flex-start;
-  padding-top: 18px;
+  padding: 24px 28px;
   border-top: 1px solid var(--line);
-  flex-wrap: wrap;
-  margin-top: 20px;
+  background: #fbf7fa;
 }
 
-.footer-left {
-  flex: 1;
-  min-width: 160px;
-}
-
-.footer-left p {
-  font-size: 13px;
-  margin-bottom: 14px;
+footer p,
+footer a {
   color: var(--muted);
-  line-height: 1.8;
-}
-
-/* ── SOCIAL CIRCLE BUTTONS ── */
-.social-circles {
-  display: flex;
-  gap: 12px;
-}
-
-.social-circles a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--primary-dark);
-  font-size: 13px;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.social-circles a:hover {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary);
-}
-
-/* ── QUICK LINKS ── */
-.footer-center {
-  flex: 1;
-  min-width: 140px;
-  padding-top: 2px;
+  font-size: 14px;
 }
 
 .footer-center p {
-  font-size: 13px;
-  font-weight: bold;
+  color: var(--brand-dark);
   margin-bottom: 8px;
-  color: var(--primary-dark);
 }
 
 .footer-center a {
   display: block;
-  color: var(--muted);
+  line-height: 1.9;
   text-decoration: none;
-  font-size: 13px;
-  line-height: 2;
-  transition: color 0.3s;
 }
 
 .footer-center a:hover {
-  color: var(--primary);
+  color: var(--brand);
   text-decoration: underline;
 }
 
-/* ── EMBED MAP RECTANGLE ── */
-.map-box {
-  width: 260px;
-  height: 140px;
+.social-circles {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.social-circles a {
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.social-circles a:hover {
+  color: #ffffff;
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.map-box {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   overflow: hidden;
-  flex-shrink: 0;
 }
 
 .map-box iframe {
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
 }
 
-/* ============================================
-   MEDIA QUERIES — RESPONSIVE
-   ============================================ */
-
-/* ── TABLET (max 768px) ── */
-@media (max-width: 768px) {
-
+@media (max-width: 820px) {
   .page {
-    margin: 10px;
-    padding: 16px;
+    width: min(100% - 20px, 1080px);
+    margin: 10px auto;
   }
 
-  /* Show hamburger, hide normal nav */
-  .hamburger {
-    display: flex;
+  header,
+  main,
+  footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   nav {
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    position: absolute;
-    top: 52px;
-    right: 0;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    width: 200px;
-    z-index: 100;
-    padding: 10px 0;
-    box-shadow: 0 8px 18px rgba(74, 23, 53, 0.14);
+    justify-content: flex-start;
   }
 
-  nav.open {
-    display: flex;
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
-  nav a {
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--primary-light);
-    font-size: 14px;
+  .profile-card {
+    width: min(280px, 100%);
   }
 
-  nav a:last-child {
-    border-bottom: none;
-  }
-
-  /* Hero shorter on tablet */
-  .hero-box {
-    height: 220px;
-  }
-
-  /* Bio stacks vertically */
-  .bio-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .profile-circle {
-    width: 160px;
-    height: 160px;
-  }
-
-  /* Footer stacks */
+  .summary-grid,
   footer {
-    flex-direction: column;
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
 
   .map-box {
-    width: 100%;
-    height: 180px;
-  }
-
-  /* Forms full width */
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    max-width: 100%;
+    min-height: 190px;
   }
 }
 
-/* ── MOBILE (max 480px) ── */
 @media (max-width: 480px) {
-
-  .page {
-    margin: 6px;
-    padding: 12px;
-  }
-
   .logo {
-    width: 124px;
-    height: 34px;
+    width: 132px;
+    height: 36px;
   }
 
-  .hero-box {
-    height: 180px;
-  }
-
-  .bio-text h2 {
-    font-size: 22px;
-  }
-
-  .bio-text p {
-    font-size: 12px;
-  }
-
-  .profile-circle {
-    width: 130px;
-    height: 130px;
-  }
-
-  .content-box {
-    padding: 16px;
-  }
-
-  .content-box h1 {
-    font-size: 20px;
-  }
-
-  .social-circles a {
-    width: 38px;
-    height: 38px;
-    font-size: 12px;
-  }
-
-  .map-box {
-    width: 100%;
-    height: 160px;
-  }
-
+  .hero-actions,
+  .button,
   button[type="submit"] {
     width: 100%;
   }
-}
 
-/* ── DESKTOP (min 960px) ── */
-@media (min-width: 960px) {
-  .hero-box {
-    height: 360px;
-  }
-
-  .bio-text h2 {
-    font-size: 30px;
+  .content-box,
+  .summary-grid article {
+    padding: 18px;
   }
 }
