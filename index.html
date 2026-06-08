@@ -7,64 +7,57 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class="page">
+
+  <!-- NAVBAR -->
   <header>
     <a class="logo" href="index.html" aria-label="Ntsako Chuma home">
       <img src="assets/logo.svg" alt="Ntsako Chuma logo">
     </a>
+    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav id="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Contact Us</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">CodeTribe Bootcamp Portfolio</p>
-        <h1>Ntsako Chuma</h1>
-        <p>
-          Final-year Computer Science student and aspiring web developer from
-          Polokwane, South Africa.
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="about.html">View my skills</a>
-          <a class="button secondary" href="contact.html">Contact me</a>
-        </div>
-      </div>
+  <!-- HERO VIDEO -->
+  <div class="hero-box">
+    <video controls poster="my_picture.jpeg" preload="metadata" aria-label="Introductory portfolio video">
+      <source src="intro-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-      <div class="profile-card">
-        <img src="my_picture.jpeg" alt="Ntsako Chuma">
-      </div>
-    </section>
+  <!-- BIO SECTION -->
+  <div class="bio-section">
+    <div class="bio-text">
+      <h2>Ntsako Chuma</h2>
+      <p>
+        <strong>My bio -</strong> I'm a final-year Computer Science student from Polokwane,
+        South Africa, currently sharpening my skills at the CodeTribe Bootcamp. I'm passionate
+        about web development and building things that make a difference.
+      </p>
+      <p>
+        I enjoy solving real-world problems with code, learning new technologies, and collaborating
+        with other developers. When I'm not coding, you'll find me reading, playing chess, or
+        attending local tech meetups.
+      </p>
+    </div>
 
-    <section class="video-section" aria-label="Introductory video">
-      <video controls poster="my_picture.jpeg" preload="metadata">
-        <source src="intro-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </section>
+    
+    <div class="profile-circle">
+      <img src="my_picture.jpeg" alt="Ntsako Chuma">
+    </div>
+  </div>
 
-    <section class="summary-grid">
-      <article>
-        <h2>About me</h2>
-        <p>
-          I enjoy building clean, responsive web pages and solving practical
-          problems with code. I am currently improving my frontend skills through
-          CodeTribe Bootcamp projects.
-        </p>
-      </article>
-      <article>
-        <h2>What I work with</h2>
-        <p>
-          HTML, CSS, JavaScript basics, responsive layouts, debugging, teamwork,
-          and continuous learning.
-        </p>
-      </article>
-    </section>
-  </main>
-
+  
   <footer>
     <div class="footer-left">
       <p>Polokwane, South Africa<br>+27 65 984 6006</p>
@@ -75,10 +68,10 @@
     </div>
 
     <div class="footer-center">
-      <p><strong>Quick links</strong></p>
+      <p><strong>additional quick links</strong></p>
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Contact Us</a>
     </div>
 
     <div class="map-box">
@@ -90,6 +83,18 @@
       </iframe>
     </div>
   </footer>
+
 </div>
+<script>
+  const menuButton = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('#main-nav');
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuButton.classList.toggle('open', isOpen);
+    menuButton.setAttribute('aria-expanded', isOpen);
+    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+</script>
 </body>
 </html>

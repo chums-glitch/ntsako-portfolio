@@ -3,55 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Ntsako Chuma</title>
+  <title>Contact Us | Ntsako Chuma</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class="page">
+
   <header>
     <a class="logo" href="index.html" aria-label="Ntsako Chuma home">
       <img src="assets/logo.svg" alt="Ntsako Chuma logo">
     </a>
+    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav id="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Contact Us</a>
     </nav>
   </header>
 
-  <main class="content-page">
-    <section class="content-box">
-      <p class="eyebrow">Contact</p>
-      <h1>Contact Me</h1>
-      <p>
-        Have a question, project idea, or opportunity? I would love to hear from
-        you.
-      </p>
+  <div class="content-box">
+    <h1>Contact Us</h1>
+    <p>Have a question, project idea, or just want to say hi? I'd love to hear from you!</p>
 
-      <div class="contact-info">
-        <strong>Phone / WhatsApp:</strong> +27 65 984 6006<br>
-        <strong>Email:</strong> ntsakochums@gmail.com<br>
-        <strong>Location:</strong> Polokwane, South Africa<br>
-        <strong>Best time:</strong> Weekdays 9am - 5pm (SAST)
-      </div>
+    <div class="contact-info">
+      <strong>Phone / WhatsApp:</strong> +27 65 984 6006<br>
+      <strong>Email:</strong> ntsakochums@gmail.com<br>
+      <strong>Location:</strong> Polokwane, South Africa<br>
+      <strong>Best time to reach me:</strong> Weekdays 9am – 5pm (SAST)
+    </div>
 
-      <h3>Send me a message</h3>
-      <form>
-        <label for="name">Your Name:</label>
-        <input id="name" type="text" placeholder="Enter your name">
+    <h3>Send me a message</h3>
 
-        <label for="email">Your Email:</label>
-        <input id="email" type="email" placeholder="Enter your email">
+    <label>Your Name:</label>
+    <input type="text" placeholder="Enter your name">
 
-        <label for="message">Message:</label>
-        <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+    <label>Your Email:</label>
+    <input type="email" placeholder="Enter your email">
 
-        <button type="submit">Send Message</button>
-      </form>
+    <label>Message:</label>
+    <textarea rows="5" placeholder="Write your message here..."></textarea>
 
-      <p><small>*This is a demo contact form. For real inquiries, please use email or phone.</small></p>
-    </section>
-  </main>
+    <button type="submit">Send Message</button>
+
+    <p><small>*This is a demo contact form. For real inquiries, please use email or phone.</small></p>
+  </div>
 
   <footer>
     <div class="footer-left">
@@ -63,10 +63,10 @@
     </div>
 
     <div class="footer-center">
-      <p><strong>Quick links</strong></p>
+      <p><strong>additional quick links</strong></p>
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Contact Us</a>
     </div>
 
     <div class="map-box">
@@ -78,6 +78,18 @@
       </iframe>
     </div>
   </footer>
+
 </div>
+<script>
+  const menuButton = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('#main-nav');
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuButton.classList.toggle('open', isOpen);
+    menuButton.setAttribute('aria-expanded', isOpen);
+    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+</script>
 </body>
 </html>
